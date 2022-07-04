@@ -54,7 +54,7 @@ describe('Android element test practice', () => {
     })
 
 
-    it.only('Enter input in a autocomplete input field', async () => {
+    it('Enter input in a autocomplete input field', async () => {
         let countryName = 'Bangladesh'
         await $('//android.widget.TextView[@content-desc="Views"]').click()
         await $('//*[@text="Auto Complete"]').click()
@@ -64,8 +64,6 @@ describe('Android element test practice', () => {
         await inputField.addValue(countryName)
         await expect(inputField).toHaveText(countryName)
     })
-
-
 
 })
 
