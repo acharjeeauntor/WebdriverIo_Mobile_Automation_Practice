@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/Android/add-note*.js'
+        './test/specs/ios/demo*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,15 +52,24 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        platformName:"Android",
-        "appium:platformVersion": "6.0.1",
-        "appium:deviceName":"546b6902",
-        "appium:automationName":"UIAutomator2",
-        // "appium:app":path.join(process.cwd(),"./app/android/ApiDemos-debug.apk")
-        "appium:app":path.join(process.cwd(),"./app/android/ColorNote+Notepad.apk"),
-        "appium:autoGrantPermissions":true
-    }],
+    capabilities: [
+        //{
+        // platformName:"Android",
+        // "appium:platformVersion": "6.0.1",
+        // "appium:deviceName":"546b6902",
+        // "appium:automationName":"UIAutomator2",
+        // // "appium:app":path.join(process.cwd(),"./app/android/ApiDemos-debug.apk")
+        // "appium:app":path.join(process.cwd(),"./app/android/ColorNote+Notepad.apk"),
+        // "appium:autoGrantPermissions":true
+    //}
+    {
+        platformName:"ios",
+        "appium:platformVersion": "15.5",
+        "appium:deviceName":"iPhone 13",
+        "appium:automationName":"XCUITest",
+        "appium:app":path.join(process.cwd(),"./app/ios/UIKitCatalog.app")
+    }
+],
     //
     // ===================
     // Test Configurations
